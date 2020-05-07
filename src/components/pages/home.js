@@ -1,12 +1,12 @@
 import React from 'react';
 
 
-function Heith() {
+function Home() {
     return (
         <div>
-            <h1>this is Heith page</h1>
+            <h1>this is Home page</h1>
         </div>
     )
 }
 
-export default Heith;
+export default Home

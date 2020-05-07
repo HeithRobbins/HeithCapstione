@@ -1,9 +1,29 @@
 body {
-    background-color: dimgrey;
+    background-image: url('./images/bg.jpg');
 }
 
-.app {
-    margin-top: 2rem;
-    display: grid;
-    justify-items: center;
+.form-container {
+    width: 500px;
+    position: absolute;
+    top: calc(50% - 250px);
+    left: calc(50% - 250px);
+    background-color: rgba(0,0,0,0.7);
+    padding: 50px;
+    box-shadow: 2ps 2ps 5ps black;
+    border-radius: 10px;
+    color: white;
+}
+
+#next-button {
+    width: 100%;
+}
+
+#back-button {
+    font-size: 40px;
+    display: inline-block;
+    cursor: pointer;
+}
+
+#back-button:hover {
+    color: gray;
 }
