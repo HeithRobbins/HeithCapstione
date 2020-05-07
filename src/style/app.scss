@@ -9,6 +9,13 @@ nav{
     min-height: 20vh;
     background: rgb(73, 79, 82);
     color: white;
+
+    .logo img {
+    width: 15vw;
+    height: 20vh;
+    filter: brightness(75%);
+    background-color: rgb(73, 79, 82);
+    }
 }
 .nav-links {
     width: 60%;
@@ -17,3 +24,4 @@ nav{
     align-items: center;
     list-style: none;
 }
+

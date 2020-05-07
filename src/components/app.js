@@ -4,7 +4,8 @@ import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
 import "../style/main.scss";
 import Nav from "./Navbar/navbar";
 
-import Home from './pages/home';
+
+import SignIn from './pages/signIn';
 import KeithCyndi from './pages/Keith-Cyndi';
 import Nathan from './pages/Nathan';
 import Emily from './pages/Emily';
@@ -15,16 +16,26 @@ import Jeremy from './pages/Jeremy';
 import Shanelle from './pages/Shanelle';
 import Sterling from './pages/Sterling';
 
+
+
+
+
 export default class App extends Component {
 
 
   render() {
+    const user = null;
     return (
-      <Router>
+      user ? <PrfilePage />
+      :
+        <Router>
         <div className='app'>
           <Nav />
             <Switch>
-              <Route exact path="/" component={Home} />
+              <Route exact path="/Sign-in" component={SignIn} />
+              <SignUp path="signUp" />
+              <SignIn path="/" />
+              <PasswordReset path="passwordReset" />
               <Route path="/KeithCyndi" component={KeithCyndi} />
               <Route path="/Nathan" component={Nathan} />
               <Route path="/Emily" component={Emily} />

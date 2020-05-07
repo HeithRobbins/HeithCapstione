@@ -1,22 +1,22 @@
 import React from 'react';
 import '../../style/main.scss'
 import { Link } from 'react-router-dom'
-
-
+import logo from "../../style/images/g271.png"
 
 
 function Nav() {
     
-
     return (
         <nav>
-            <h3>Logo</h3>
+            <div className="logo">
+                <img src={logo} alt="Logo" />
+            </div>
             <ul className="nav-links">
-                <Link to="/home">
-                <li>Home</li>
+                <Link to="/Sign-In">
+                <li>Register</li>
                 </Link>
                 <Link to="/KeithCyndi">
-                    <li>KeithCyndi</li>
+                    <li>Keith Cyndi</li>
                 </Link>
                 <Link to="/Nathan">
                     <li>Nathan</li>
