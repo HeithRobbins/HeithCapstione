@@ -1,12 +1,17 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { auth } from "../../../config/fbconfig"
 import { Link } from 'react-router-dom'
+import { UserContext } from "./userProvider";
 
 const PasswordReset = () => {
+
     const [email, setEmail] = useState("");
     const [emailHasBeenSent, setEmailHasBeenSent] = useState(false);
     const [error, setError] = useState(null);
+
     const onChangeHandler = event => {
         const { name, value } = event.currentTarget;
+
         if (name === "userEmail") {
             setEmail(value);
         }
@@ -27,24 +32,24 @@ const PasswordReset = () => {
 
     return (
         <div className="mt-8">
-            <h1 className="text-xl text-center font-bold mb-3">
+            <h1 className="textResetpw">
                 Reset your Password
-      </h1>
-            <div className="border border-blue-300 mx-auto w-11/12 md:w-2/4 rounded py-8 px-4 md:px-8">
+            </h1>
+            <div className="borderForEmail">
                 <form action="">
                     {emailHasBeenSent && (
-                        <div className="py-3 bg-green-400 w-full text-white text-center mb-3">
+                        <div className="borderForEmailBeenSent">
                             An email has been sent to you!
                         </div>
                     )}
                     {error !== null && (
-                        <div className="py-3 bg-red-600 w-full text-white text-center mb-3">
+                        <div className="error-alert">
                             {error}
                         </div>
                     )}
-                    <label htmlFor="userEmail" className="w-full block">
+                    <label htmlFor="userEmail" className="block">
                         Email:
-          </label>
+                    </label>
                     <input
                         type="email"
                         name="userEmail"
@@ -56,18 +61,22 @@ const PasswordReset = () => {
                     />
                     <button
                         className="pwChange"
+                        onClick={event => {
+                            sendResetEmail(event);
+                        }}
                     >
                         Sended link
-          </button>
+                    </button>
                 </form>
                 <Link
                     to="/Sign-In"
                     className="backToSignIn"
-                >
+                    >
                     &larr; back to sign in page
-        </Link>
+                </Link>
             </div>
         </div>
     );
 };
+
 export default PasswordReset;

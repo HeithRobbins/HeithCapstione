@@ -6,38 +6,17 @@ import firebase from 'firebase/app'
 import firestore from 'firebase/firestore'
 import UserProvider from "../pages/userProvider"
 
-// work on the nav bar need to be done frist 
-console.log(firebase)
+
 
 function Nav() {
-    if (firebase.auth().currentUser = null) {
-        return (
-            <ul className="nav-links">
-                <Link to="/Sign-In">
-                    <li>Register</li>
-                </Link>
-            </ul>
-        )
-    } else {
-        <Link to="/Sign-In">
-            <li>Register</li>
-        </Link>
-    }
+
     return (
         <nav>
             <div className="logo">
                 <img src={logo} alt="Logo" />
             </div>
-            <UserProvider>
-                <button to="/Sign-In"
-                    onClick={() => 
-                    firebase.auth().signOut().then(() => 
-                    console.log("signOut"))
-                    .catch(err => console.log(err))}>
-                    Logout
-                </button>
                 <ul className="nav-links">
-                    <Link to="/Sign-In">
+                    <Link to="/SignIn">
                     <li>Register</li>
                     </Link>
                 <Link to="/KeithCyndi">
@@ -68,7 +47,7 @@ function Nav() {
                 <li>Sterling</li>
                 </Link>
             </ul>
-            </UserProvider>
+            
         </nav>
     )
 }
