@@ -7,6 +7,7 @@ import Nav from "./Navbar/navbar";
 import UserProvider from "./pages/userProvider"
 import Application from "./pages/application"
 
+
 import SignIn from './pages/signIn';
 import SignUp from './pages/signUp';
 import PasswordReset from './pages/resetpw';
@@ -25,14 +26,10 @@ export default class App extends Component {
 
 
   render() {
-    const user = null;
     return (
-      user ? <ProfilePage />
-      :
         <BrowserRouter>
           <div className='app'>
             <Nav />
-              {/* <UserProvider>  */}
                 <Application />
                 <Switch>
                   <Route exact path="/SignIn" component={SignIn} />
@@ -49,9 +46,9 @@ export default class App extends Component {
                   <Route path="/Sterling" component={Sterling} />
                   {/* <Route path="/blog" component={HomeBlog} /> */}
                 </Switch>
-              {/* </UserProvider> */}
           </div>
         </BrowserRouter>
+      
     );
   }
 }

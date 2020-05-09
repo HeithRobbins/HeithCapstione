@@ -69,7 +69,7 @@ const PasswordReset = () => {
                     </button>
                 </form>
                 <Link
-                    to="/Sign-In"
+                    to="/SignIn"
                     className="backToSignIn"
                     >
                     &larr; back to sign in page

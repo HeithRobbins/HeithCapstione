@@ -63,6 +63,7 @@
     "react-router": "^4.2.0",
     "react-router-dom": "^4.3.1",
     "redux": "^3.7.2",
+    "regenerator-runtime": "^0.13.5",
     "sass-loader": "^7.1.0",
     "style-loader": "^0.21.0",
     "webpack": "^4.16.4",
@@ -75,7 +76,6 @@
   "devDependencies": {
     "babel-plugin-transform-class-properties": "^6.24.1",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
-    "babel-polyfill": "^6.0.16",
     "babel-preset-react": "^6.24.1",
     "babel-register": "^6.26.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",

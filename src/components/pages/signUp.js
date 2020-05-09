@@ -2,6 +2,7 @@ import React, { useContext, useState } from "react";
 import { Link } from 'react-router-dom'
 import { auth, generateUserDocument } from "../../../config/fbconfig"
 import firebase from 'firebase/app'
+import { signInWithGoogle } from '../../../config/fbconfig'
 
 const SignUp = () => {
     const [email, setEmail] = useState("");
@@ -12,6 +13,7 @@ const SignUp = () => {
     const createUserWithEmailAndPasswordHandler = async (event, email, password) => {
         event.preventDefault();
         try {
+            console.log("You made it this far")
             const { user } = await auth.createUserWithEmailAndPassword(email, password);
             generateUserDocument(user, { displayName });
         }
@@ -108,7 +110,7 @@ const SignUp = () => {
         </button>
                 <p className="ptags-text">
                     Already have an account?{" "}
-                    <Link to="/Sign-in" className="btnForSignIn">
+                    <Link to="/SignIn" className="btnForSignIn">
                         Sign in here
           </Link>{" "}
                 </p>

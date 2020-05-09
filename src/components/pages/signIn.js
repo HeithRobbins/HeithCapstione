@@ -1,6 +1,7 @@
 import React, { useState } from "react";
-import { Link } from 'react-router-dom'
+import { Link, Redirect } from 'react-router-dom'
 import { auth } from '../../../config/fbconfig'
+import { signInWithGoogle } from '../../../config/fbconfig'
 
 
 const SignIn = () => {
@@ -9,12 +10,21 @@ const SignIn = () => {
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
 
+const authredirect = (path)  =>{
+    
+    return <Redirect to={path}/>
+};
+
     const signInWithEmailAndPasswordHandler = (event, email, password) => {
         event.preventDefault();
-        auth.signInWithEmailAndPassword(email, password).catch(error => {
+        
+        auth.signInWithEmailAndPassword(email, password)
+        .then(res => {console.log(res)}
+        ).catch(error => {
             setError("Error signing in with password and email!");
             console.error("Error signing in with password and email", error);
         });
+        authredirect("/KeithCyndi")
     };
 
     const onChangeHandler = (event) => {
@@ -27,6 +37,7 @@ const SignIn = () => {
             setPassword(value);
         }
     };
+    
 
     return (
         <div className="mt-8">
@@ -45,6 +56,7 @@ const SignIn = () => {
                         placeholder="Type your own email"
                         id="userEmail"
                         onChange={(event) => onChangeHandler(event)}
+                        
                     />
                     <label htmlFor="userPassword" className="block">
                         Password:
@@ -57,10 +69,12 @@ const SignIn = () => {
                         placeholder="Your Password"
                         id="userPassword"
                         onChange={(event) => onChangeHandler(event)}
+                        
                     />
                     
-                    <button className="btn-SignIn" onClick={(event) => { signInWithEmailAndPasswordHandler(event, email, password) }}>
-                        Sign in
+                    <button className="btn-SignIn" onClick={(event) => { signInWithEmailAndPasswordHandler(event, email, password) }}
+                        >
+                        Sign in 
           </button>
                 </form>
                 <p className="text-center">or</p>
