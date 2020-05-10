@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { Link, Redirect } from 'react-router-dom'
 import { auth } from '../../../config/fbconfig'
 import { signInWithGoogle } from '../../../config/fbconfig'
-
+import logo from "../../style/images/g271.png"
 
 const SignIn = () => {
 
@@ -40,14 +40,18 @@ const authredirect = (path)  =>{
     
 
     return (
+        
         <div className="mt-8">
-            <h1 className="textSignIn">Sign In</h1>
+            <div className="left-side">
+                <img src={logo} alt="Logo" />
+            </div>
+            <div><h1 className="textSignIn">Please Login</h1>
             <div className="borderForlogin">
                 {error !== null && <div className="error-alert">{error}</div>}
                 <form className="">
                     <label htmlFor="userEmail" className="block">
                         Email:
-          </label>
+                    </label>
                     <input
                         type="email"
                         className="input-bar-email"
@@ -60,7 +64,7 @@ const authredirect = (path)  =>{
                     />
                     <label htmlFor="userPassword" className="block">
                         Password:
-          </label>
+                    </label>
                     <input
                         type="password"
                         className="input-bar-password"
@@ -75,7 +79,7 @@ const authredirect = (path)  =>{
                     <button className="btn-SignIn" onClick={(event) => { signInWithEmailAndPasswordHandler(event, email, password) }}
                         >
                         Sign in 
-          </button>
+                </button>
                 </form>
                 <p className="text-center">or</p>
                 <button
@@ -85,19 +89,21 @@ const authredirect = (path)  =>{
                     }}
                 >
                     Sign in with Google
-        </button>
+                </button>
                 <p className="text-center">
                     Don't have an account?{" "}
                     <Link to="/signUp" className="sign-up-text">
                         Sign up here
-          </Link>{" "}
+                    </Link>{" "}
                     <br />{" "}
                     <Link to="/resetpw" className="forgot-pwText">
                         Forgot Password?
-          </Link>
+                    </Link>
                 </p>
             </div>
         </div>
+        </div>
+
     );
 };
                 

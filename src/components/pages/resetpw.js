@@ -32,7 +32,7 @@ const PasswordReset = () => {
 
     return (
         <div className="mt-8">
-            <h1 className="textResetpw">
+            <div><h1 className="textResetpw">
                 Reset your Password
             </h1>
             <div className="borderForEmail">
@@ -74,6 +74,7 @@ const PasswordReset = () => {
                     >
                     &larr; back to sign in page
                 </Link>
+            </div>
             </div>
         </div>
     );
