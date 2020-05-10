@@ -1,7 +1,9 @@
-import { combineReducers } from 'redux';
+import React from 'react';
+import ReactDOM from 'react-dom';
+import App from '../components/app';
+import * as serviceWorker from '../../config/serviceWorkers';
+import "../style/main.scss";
 
-const rootReducer = combineReducers({
-  state: (state = {}) => state
-});
+ReactDOM.render(<App />, document.getElementById('root'));
 
-export default rootReducer;
+serviceWorker.unregister();

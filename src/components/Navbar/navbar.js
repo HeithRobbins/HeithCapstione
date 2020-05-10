@@ -2,6 +2,7 @@ import React from 'react';
 import '../../style/main.scss'
 import { Link } from 'react-router-dom'
 
+
 import firebase from 'firebase/app'
 import firestore from 'firebase/firestore'
 import UserProvider from "../pages/userProvider"
@@ -13,12 +14,14 @@ function Nav() {
     return (
         <nav>
             <div className="nav-container">
+                
                 <div className="nav-wrapper">
                     <div className="nav-links">
                         <Link to="/SignIn">
                         <li>Register</li>
                         </Link>
                     </div>
+                    
                     <div className="nav-links">
                         <Link to="/KeithCyndi">
                             <li>Keith Cyndi</li>

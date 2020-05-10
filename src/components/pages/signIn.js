@@ -3,28 +3,35 @@ import { Link, Redirect } from 'react-router-dom'
 import { auth } from '../../../config/fbconfig'
 import { signInWithGoogle } from '../../../config/fbconfig'
 import logo from "../../style/images/g271.png"
+import { useHistory } from 'react-router-dom'
+
+const emailToPage = {
+    "heith.robbins@gmail.com": "/Heith"
+    , "testing@gmail.com": "/KeithCyndi"
+}
 
 const SignIn = () => {
 
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [error, setError] = useState(null);
+    let history = useHistory();
 
-const authredirect = (path)  =>{
-    
-    return <Redirect to={path}/>
-};
 
     const signInWithEmailAndPasswordHandler = (event, email, password) => {
         event.preventDefault();
-        
+
         auth.signInWithEmailAndPassword(email, password)
-        .then(res => {console.log(res)}
-        ).catch(error => {
-            setError("Error signing in with password and email!");
-            console.error("Error signing in with password and email", error);
-        });
-        authredirect("/KeithCyndi")
+            .then(res => { console.log(res) }
+            ).catch(error => {
+                setError("Error signing in with password and email!");
+                console.error("Error signing in with password and email", error);
+            });
+
+        let path = emailToPage[email.toLowerCase()]
+        if (path) {
+            history.push(path);
+        }
     };
 
     const onChangeHandler = (event) => {
