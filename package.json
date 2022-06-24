@@ -58,7 +58,7 @@
     "firebase": "^7.14.2",
     "html-loader": "^0.5.5",
     "html-webpack-plugin": "^3.2.0",
-    "jsdom": "^16.2.2",
+    "jsdom": "^16.5.0",
     "marked": "^1.0.0",
     "method-override": "^3.0.0",
     "node-sass": "^4.9.2",
